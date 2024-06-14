@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма регистрации</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form action="check.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+        <div class="form-section">
+            <h2>Личная информация</h2>
+            <div class="form-group">
+                <label for="lastname">Фамилия* <span class="error">*</span></label>
+                <input type="text" id="lastname" name="lastname" required pattern="[А-Яа-яЁё]+" title="Только русские буквы">
+            </div>
+            <div class="form-group">
+                <label for="firstname">Имя* <span class="error">*</span></label>
+                <input type="text" id="firstname" name="firstname" required pattern="[А-Яа-яЁё]+" title="Только русские буквы">
+            </div>
+            <div class="form-group">
+                <label for="middlename">Отчество</label>
+                <input type="text" id="middlename" name="middlename" pattern="[А-Яа-яЁё]+" title="Только русские буквы">
+            </div>
+            <div class="form-group">
+                <label>Пол* <span class="error">*</span></label>
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">Мужской</label>
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label for="female">Женский</label>
+            </div>
+            <div class="form-group">
+                <label for="eyecolor">Цвет глаз</label>
+                <input type="color" id="eyecolor" name="eyecolor">
+            </div>
+            <div class="form-group">
+                <label for="birthdate">Дата рождения* <span class="error">*</span></label>
+                <input type="date" id="birthdate" name="birthdate" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Возраст</label>
+                <input type="number" id="age" name="age" min="18" max="100" required>
+            </div>
+        </div>
+        <div class="form-section">
+            <h2>Контактная информация</h2>
+            <div class="form-group">
+                <label for="birthplace">Место рождения* <span class="error">*</span></label>
+                <select id="birthplace" name="birthplace" required>
+                    <option value="">Выберите место</option>
+                    <option value="Москва">Москва</option>
+                    <option value="Санкт-Петербург">Санкт-Петербург</option>
+                    <option value="Новосибирск">Новосибирск</option>
+                    <option value="Екатеринбург">Екатеринбург</option>
+                    <option value="Казань">Казань</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="zipcode">Индекс* <span class="error">*</span></label>
+                <input type="text" id="zipcode" name="zipcode" required pattern="\d{6}" title="Индекс должен состоять из 6 цифр">
+            </div>
+            <div class="form-group">
+                <label for="address">Домашний адрес* <span class="error">*</span></label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="form-group">
+                <label for="regdate">Дата регистрации* <span class="error">*</span></label>
+                <input type="date" id="regdate" name="regdate" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Номер телефона* <span class="error">*</span></label>
+                <input type="tel" id="phone" name="phone" required pattern="\+7-\d{3}-\d{3}-\d{2}-\d{2}" title="Формат телефона должен быть +7-ххх-ххх-хх-хх">
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail* <span class="error">*</span></label>
+                <input type="email" id="email" name="email" required>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>Общая информация</h2>
+            <div class="form-group">
+                <label for="passport">Скриншот первой страницы паспорта (jpeg)* <span class="error">*</span></label>
+                <input type="file" id="passport" name="passport" accept="image/jpeg" required>
+            </div>
+            <div class="form-group">
+                <label for="referral">Откуда вы узнали о магазине?</label>
+                <select id="referral" name="referral" multiple>
+                    <option value="реклама">Реклама</option>
+                    <option value="друзья">Друзья</option>
+                    <option value="интернет">Интернет</option>
+                    <option value="другое">Другое</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="consent" name="consent" required>
+                <label for="consent">Я согласен на обработку и хранение персональных данных*</label>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <button type="submit">Отправить</button>
+            <button type="reset">Очистить</button>
+        </div>
+    </form>
+
+    <script>
+        function validateForm() {
+            return true;
+        }
+    </script>
+</body>
+</html>

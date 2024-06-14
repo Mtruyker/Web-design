@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Изучаем JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Добро пожаловать в мир JavaScript!</h1>
+        <div id="user-greeting">Здравствуйте, <span id="username"></span>!</div>
+    </header>
+    <main>
+        <section id="about-js">
+            <h2>Общие сведения о JavaScript</h2>
+            <p>JavaScript (JS) — это язык программирования, который позволяет делать веб-страницы интерактивными. Он широко используется для создания динамических и интерактивных веб-приложений.</p>
+            <h3>Зачем нужен JavaScript?</h3>
+            <p>JavaScript используется для:</p>
+            <ul>
+                <li>Создания интерактивных элементов на веб-страницах, таких как кнопки, формы, слайдеры и т.д.</li>
+                <li>Валидации форм на стороне клиента.</li>
+                <li>Работы с динамическим контентом, AJAX-запросов.</li>
+                <li>Разработки игр и визуализаций.</li>
+            </ul>
+            <h3>Где JavaScript не пригодится?</h3>
+            <p>JavaScript не подходит для:</p>
+            <ul>
+                <li>Серверных задач (для этого используется Node.js, но это отдельная область).</li>
+                <li>Работы с тяжелыми вычислениями и большими объемами данных (лучше использовать языки, такие как Python или C++).</li>
+                <li>Разработки мобильных приложений (для этого лучше подходят платформы, такие как Swift для iOS и Kotlin для Android, хотя есть фреймворки для использования JS, например, React Native).</li>
+            </ul>
+        </section>
+        <section id="js-examples">
+            <h2>Примеры использования JavaScript</h2>
+            <p>Давайте посмотрим, что можно сделать с помощью JavaScript:</p>
+            <nav>
+                <ul>
+                    <li><button onclick="askName()">0) Представьтесь</button></li>
+                    <li><button onclick="calculateTriangleArea()">1) Площадь треугольника</button></li>
+                    <li><button onclick="compareStrings()">2) Сравнение строк</button></li>
+                    <li><button onclick="processArray()">3) Массив</button></li>
+                    <li><button onclick="startTimer()">4) Таймер</button></li>
+                    <li><button onclick="takeQuiz()">5) Тест по JS</button></li>
+                    <li><button onclick="showSplashScreen()">6) Заставка</button></li>
+                </ul>
+            </nav>
+            <div id="task-display"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Изучаем JavaScript</p>
+    </footer>
+</body>
+</html>
